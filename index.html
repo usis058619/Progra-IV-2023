@@ -20,47 +20,57 @@
                                 <div class="col-9 col-md-3">
                                     <input class="form-control"  required type="text" v-model="alumno.codigo" name="txtCodigoalumno" id="txtCodigoalumno">
                                 </div>
+
                             </div>
                             <div class="row p-1">
                                 <div class="col-3 col-md-2">NOMBRE:</div>
                                 <div class="col-9 col-md-6">
                                     <input class="form-control" type="text" v-model="alumno.nombre" name="txtNombrealumno" id="txtNombrealumno">
                                 </div>
+
                             </div>
                             <div class="row p-1">
                                 <div class="col-3 col-md-2">DIRECCIÓN:</div>
                                 <div class="col-9 col-md-6">
                                     <input class="form-control" type="text" v-model="alumno.direccion" name="txtDireccionalumno" id="txtDireccionlumno">
                                 </div>
+
+                            </div>
+                            <div class="row p-1">
+                                <div class="col-3 col-md-2">MUNICIPIO:</div>
+                                <div class="col-9 col-md-6">
+                                    <input class="form-control" type="text" v-model="alumno.municipio" name="txtMunicipioalumno" id="txtMunicipioAlumno">
+                                </div>
+
                             </div>
                             <div class="row p-1">
                                 <div class="col-3 col-md-2">DEPARTAMENTO:</div>
                                 <div class="col-9 col-md-6">
                                     <input class="form-control" type="text" v-model="alumno.departamento" name="txtDepartamentoalumno" id="txtDepartamentoAlumno">
                                 </div>
+
                             </div>
                             <div class="row p-1">
-                                <div class="col-3 col-md-2">MUNICIPIO:</div>
-                                <div class="col-9 col-md-6">
-                                    <input class="form-control" type="text" v-model="alumno.municipio" name="txtmunicipioalumno" id="txtMunicipioAlumno">
+                                <div class="col-3 col-md-2">
+                                    <label for="txtTelefonoAlumno">TELEFONO:</label>
                                 </div>
-                            </div>
-                            <div class="row p-1">
-                                <div class="col-3 col-md-2">TELEFONO:</div>
                                 <div class="col-9 col-md-6">
-                                    <input class="form-control"  type="text" v-model="alumno.telefono" name="txttelefonoalumno" id="txtTelefonoAlumno">
+                                    <input required pattern="[0-9|-]{9}" v-model="alumno.telefono" type="text"
+                                        class="form-control" name="txtTelefonoAlumno" id="txtTelefonoAlumno">
                                 </div>
+
                             </div>
                             <div class="row p-1">
                                 <div class="col-3 col-md-2">FECHA NACIMIENTO:</div>
                                 <div class="col-9 col-md-6">
-                                    <input class="form-control" type="text" v-model="alumno.nacimiento" name="txtnacimientoalumno" id="txtNacimientoAlumno">
+                                    <input class="form-control" type="text" v-model="alumno.nacimiento" name="txtNacimientoalumno" id="txtNacimientoAlumno">
                                 </div>
+
                             </div>
                             <div class="row p-1">
                                 <div class="col-3 col-md-2">SEXO:</div>
                                 <div class="col-9 col-md-6">
-                                    <input class="form-control" type="text" v-model="alumno.sexo" name="txtsexoalumno" id="txtsexoAlumno">
+                                    <input class="form-control" type="text" v-model="alumno.sexo" name="txtSexoalumno" id="txtSexoAlumno">
                                 </div>
                             </div>
                             <div class="row p-1">
@@ -104,10 +114,10 @@
                                         <td>{{alumno.nombre}}</td>
                                         <td>{{alumno.direccion}}</td>
                                         <td>{{alumno.municipio}}</td>
-                                        <td>{{alumno.departamento}</td>
-                                        <td>{{alumno.telefono}</td>
-                                        <td>{{alumno.nacimiento}</td>
-                                        <td>{{alumno.sexo}</td>
+                                        <td>{{alumno.departamento}}</td>
+                                        <td>{{alumno.telefono}}</td>
+                                        <td>{{alumno.nacimiento}}</td>
+                                        <td>{{alumno.sexo}}</td>
                                         <td></td>
                                         <td><button @click.prevent="eliminaralumno(alumno)" class="btn btn-danger">Eliminar</button></td>
                                     </tr>
@@ -136,6 +146,7 @@
                         direccion: '',
                         municipio:'',
                         departamento:'',
+                        telefono:'',
                         nacimiento:'',
                         sexo:''
                     }
@@ -150,6 +161,7 @@
                     this.alumno.direccion = '';
                     this.alumno.municipio = '';
                     this.alumno.departamento= '';
+                    this.alumno.telefono= '';
                     this.alumno.nacimiento = '';
                     this.alumno.sexo = '';
                 },
