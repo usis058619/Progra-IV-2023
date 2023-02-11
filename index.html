@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- IE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
-    <title>::.. APP ACADEMICA ..::</title>
+    <title>REGISTRO DE ALUMNOS</title>
 </head>
 <body><!-- Contenido de la pagina html -->
     <div class="container" id="app">
@@ -16,62 +16,66 @@
                     <div class="card-body">
                         <form id="frmalumno" @submit.prevent="guardaralumno" @reset.prevent="nuevoalumno()">
                             <div class="row p-1">
-                                <div class="col-3 col-md-2">CODIGO:</div>
+                                <div class="col-3 ">CODIGO:</div>
                                 <div class="col-9 col-md-3">
                                     <input class="form-control"  required type="text" v-model="alumno.codigo" name="txtCodigoalumno" id="txtCodigoalumno">
                                 </div>
 
                             </div>
                             <div class="row p-1">
-                                <div class="col-3 col-md-2">NOMBRE:</div>
+                                <div class="col-3 ">NOMBRE:</div>
                                 <div class="col-9 col-md-6">
                                     <input class="form-control" type="text" v-model="alumno.nombre" name="txtNombrealumno" id="txtNombrealumno">
                                 </div>
 
                             </div>
                             <div class="row p-1">
-                                <div class="col-3 col-md-2">DIRECCIÓN:</div>
+                                <div class="col-3 ">DIRECCIÓN:</div>
                                 <div class="col-9 col-md-6">
                                     <input class="form-control" type="text" v-model="alumno.direccion" name="txtDireccionalumno" id="txtDireccionlumno">
                                 </div>
 
                             </div>
                             <div class="row p-1">
-                                <div class="col-3 col-md-2">MUNICIPIO:</div>
+                                <div class="col-3 ">MUNICIPIO:</div>
                                 <div class="col-9 col-md-6">
                                     <input class="form-control" type="text" v-model="alumno.municipio" name="txtMunicipioalumno" id="txtMunicipioAlumno">
                                 </div>
 
                             </div>
                             <div class="row p-1">
-                                <div class="col-3 col-md-2">DEPARTAMENTO:</div>
+                                <div class="col-3 ">DEPARTAMENTO:</div>
                                 <div class="col-9 col-md-6">
                                     <input class="form-control" type="text" v-model="alumno.departamento" name="txtDepartamentoalumno" id="txtDepartamentoAlumno">
                                 </div>
 
                             </div>
                             <div class="row p-1">
-                                <div class="col-3 col-md-2">
+                                <div class="col-3 ">
                                     <label for="txtTelefonoAlumno">TELEFONO:</label>
                                 </div>
                                 <div class="col-9 col-md-6">
-                                    <input required pattern="[0-9|-]{9}" v-model="alumno.telefono" type="text"
+                                    <input required pattern="[0-9|-]{8}" v-model="alumno.telefono" type="text"
                                         class="form-control" name="txtTelefonoAlumno" id="txtTelefonoAlumno">
                                 </div>
 
                             </div>
                             <div class="row p-1">
-                                <div class="col-3 col-md-2">FECHA NACIMIENTO:</div>
+                                <div class="col-3 ">FECHA NACIMIENTO:</div>
                                 <div class="col-9 col-md-6">
-                                    <input class="form-control" type="text" v-model="alumno.nacimiento" name="txtNacimientoalumno" id="txtNacimientoAlumno">
+                                    <input class="form-control" type="date" v-model="alumno.nacimiento" name="txtNacimientoalumno" id="txtNacimientoAlumno">
                                 </div>
 
                             </div>
                             <div class="row p-1">
-                                <div class="col-3 col-md-2">SEXO:</div>
-                                <div class="col-9 col-md-6">
+                                <div class="col-3 ">SEXO:</div>
+                                <select class="col-9 col-md-6" required v-model="alumno.sexo" name="txtSexoalumno" id="txtSexoAlumno">
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Femenino">Femenino</option>
+                                  </select>
+                                <!-- <div class="col-9 col-md-6">
                                     <input class="form-control" type="text" v-model="alumno.sexo" name="txtSexoalumno" id="txtSexoAlumno">
-                                </div>
+                                </div> -->
                             </div>
                             <div class="row p-1">
                                 <div class="col col-md-6">
@@ -106,6 +110,7 @@
                                         <th>TELEFONO</th>
                                         <th>F. NACIMIENTO</th>
                                         <th>SEXO</th>
+                                        <th>ACCIONES</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -118,7 +123,6 @@
                                         <td>{{alumno.telefono}}</td>
                                         <td>{{alumno.nacimiento}}</td>
                                         <td>{{alumno.sexo}}</td>
-                                        <td></td>
                                         <td><button @click.prevent="eliminaralumno(alumno)" class="btn btn-danger">Eliminar</button></td>
                                     </tr>
                                 </tbody>
